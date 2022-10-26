@@ -1,0 +1,194 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* /////////////////////////////////////
+// GLOBAL //
+///////////////////////////////////// */
+
+html{
+  scroll-behavior: smooth;
+}
+
+:root{
+  --ff-primary: 'Playfair Display', serif;
+  --ff-secondary: 'Nanum Gothic', sans-serif;
+
+  --fw-reg: 300;
+  --fw-bold: 900;
+
+  --clr-light: #F9E0CA;
+  --clr-dark:#F2BC8D;
+  --clr-text: #303030;
+  --clr-accent: #C16D48;
+  --clr-gold: rgba(178,161,77,1);
+
+  --fs-h1: 3rem;
+  --fs-h2: 2.25rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgba(0, 0, 0, 0.25),
+        0.125em 0.125em 0.125em rgba(0,0,0,0.15);
+}
+
+@media (min-width: 800px){
+
+  :root{
+    --fs-h1: 4.5rem;
+    --fs-h2: 3rem;
+    --fs-h3: 1.5rem;
+    --fs-body: 1.125rem;
+  }
+}
+
+
+/* ////////////////
+/ Typography /
+/// */
+
+.section__title{
+  font-size: var(--fs-h2);
+  font-family: var(--ff-primary);
+}
+
+/* /////////////////////////////////////
+// NAVBAR //
+///////////////////////////////////// */
+
+.navbar {
+  padding: 1em;
+  min-height: 6vh;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-ul{
+  position: relative;
+  display: flex;
+  margin: auto;
+}
+
+.navbar li{
+  text-decoration: none;
+  list-style: none;
+}
+
+.navbar-ul a {
+  padding: 1em;
+  text-decoration: none;
+  color: var(--clr-text);
+  font-family: var(--ff-primary);
+  font-size: var(--fs-h3);
+}
+
+.navbar-ul a:hover, .navbar-ul a:focus {
+  font-weight: var(--fw-bold);
+  color: var(--clr-accent);
+}
+
+.menu-sub{
+  display: none;
+  margin-top: 1em;
+  position: absolute;
+  background: rgba(0,0,0,0.301);
+  backdrop-filter: blur(1rem);
+  margin-right: 2em;
+  z-index: 1000;
+
+}
+
+.menu-sub li {
+  padding: 1em;
+
+}
+
+.navbar li:hover .menu-sub{
+  display: block;
+  height: auto;  
+}
+
+.menu-sub li:hover, .menu-sub li:focus {
+  color: white;
+  cursor: pointer;
+
+}
+
+/* /////////////////////////////////////
+// HOMEPAGE //
+///////////////////////////////////// */
+
+.section{
+  padding: 2em;
+  margin: auto;
+  margin-bottom: 3em;
+  border-radius: 25px;
+  max-width: 90%;
+}
+
+/* /////////////////////////////////////
+// HERO SECTION //
+///////////////////////////////////// */
+
+.section__hero{
+  min-height: 94vh;
+  background-color: #C16D48;
+}
+
+/* /////////////////////////////////////
+// ABOUT //
+///////////////////////////////////// */
+
+.section__about{
+  background-color: var(--clr-light);
+  min-height: 40vh;
+}
+
+/* /////////////////////////////////////
+// SOCIALS //
+///////////////////////////////////// */
+
+/* /////////////////////////////////////
+// SERVICES //
+///////////////////////////////////// */
+
+.section__services{
+  background-color: var(--clr-dark);
+  min-height: 40vh;
+}
+
+.services__button{
+  padding: 1em;
+  margin: 2em;
+  border: none;
+  border-radius: 15px;
+  font-size: var(--fs-h3);
+  font-family: var(--ff-secondary);
+}
+
+.services__button:hover, .services__button:focus{
+  background-color: var(--clr-accent);
+  cursor: pointer;
+  box-shadow: var(--bs);
+  transition: background-color ease-in-out 250ms;
+  text-decoration: underline;
+}
+
+/* /////////////////////////////////////
+// CONTACT //
+///////////////////////////////////// */
+
+.section__contact{
+  background-color: var(--clr-light);
+  min-height: 40vh;
+}
