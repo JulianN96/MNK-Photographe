@@ -27,7 +27,8 @@ html{
   --fw-reg: 300;
   --fw-bold: 900;
 
-  --clr-light: #F9E0CA;
+  --clr-light: rgb(249, 224, 202);
+  --clr-light-fade: rgba(249, 224, 202,0.8);
   --clr-dark:#F2BC8D;
   --clr-text: #303030;
   --clr-accent: #C16D48;
@@ -71,6 +72,15 @@ html{
   min-height: 6vh;
   display: flex;
   flex-direction: row;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: background-color 400ms ease-in-out;
+  z-index: 3;
+}
+
+.navbar-scrolled{
+  background-color: white;
 }
 
 .navbar-ul{
@@ -105,6 +115,8 @@ html{
   backdrop-filter: blur(1rem);
   margin-right: 2em;
   z-index: 1000;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 
 }
 
@@ -144,7 +156,27 @@ html{
 
 .section__hero{
   min-height: 94vh;
+  max-width: 100%;
   background-color: #C16D48;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  background-size: cover;
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.section__hero .section__title {
+  margin-top: 5em;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(1rem);
+  max-width: 40%;
+  border-radius: 15px;
+  padding: 1em;
+}
+
+.section__hero button{
+  width: 5em;
 }
 
 /* /////////////////////////////////////
@@ -152,9 +184,31 @@ html{
 ///////////////////////////////////// */
 
 .section__about{
-  background-color: var(--clr-light);
+
   min-height: 40vh;
-  background-image: "./public/assets/images/tempphotolandscape.JPG";
+  display: flex;
+  background-image: url("https://source.unsplash.com/random/?landscape/");
+  background-size: cover;
+
+}
+
+.about__text{
+  margin-top: 4em;
+  padding: 2em;
+  background-color: var(--clr-light-fade);
+  text-align: left;
+  border-radius: 15px;
+  margin: 2em;
+}
+
+.about__text p{
+  font-size: var(--fs-h3);
+  line-height: 2em;
+}
+
+.about__img{
+  max-height: 600px;
+  border-radius: 15px;
 }
 
 /* /////////////////////////////////////
@@ -167,7 +221,18 @@ html{
 
 .section__services{
   background-color: var(--clr-dark);
-  min-height: 40vh;
+  min-height: 80vh;
+  background-image: url("https://source.unsplash.com/random/?camera/");
+  background-size: cover;
+}
+
+
+.section__services .section__title{
+  background-color: rgba(249, 224, 202,0.8);
+  width: 50%;
+  border-radius: 15px;
+  margin: auto;
+  margin-bottom: 2em;
 }
 
 .services__button{
@@ -234,16 +299,17 @@ i {
 }
 
 .playingcardwidget {
+  
   display: grid;
   place-items: center;
-  min-height: 100vh;
+  min-height: 0vh;
 }
 
 .card {
   background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
   aspect-ratio: 5/7;
-  transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
+  transition: transform 800ms cubic-bezier(.05,.43,.25,.95), scale 800ms cubic-bezier(.05,.43,.25,.95);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -267,6 +333,7 @@ i {
 
 .big-card{
   border-radius: 15px;
+
 }
 
 .little-card{
@@ -327,6 +394,7 @@ i {
 .big-card:nth-child(5):hover,
 .big-card:nth-child(7):hover{
   z-index: 2;
+  scale: 110%;
   box-shadow: 0.5em 0.5em 0.75em rgba(0, 0, 0, 0.5);
 }
 

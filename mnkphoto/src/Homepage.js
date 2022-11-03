@@ -1,4 +1,6 @@
+import HeroCarousel from "./HeroCarousel"
 import Playingcard from "./Playingcard"
+import Socials from "./Socials"
 
 export default function Homepage(){
 
@@ -23,30 +25,36 @@ export default function Homepage(){
     "https://images.unsplash.com/photo-1587614298171-a223667e51c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"   
   ]
 
+  
+
   return(
     <div className="homepage">
 
       <script src="https://kit.fontawesome.com/d07c4d8f71.js" crossorigin="anonymous"></script>
 
-      <div className="section section__hero">
-        <h1>MNK Photographe</h1>
-      </div>
+      <HeroCarousel />
 
       <div className="section section__about" id="about">
-          <h2 className="section__title">A propos de Moi</h2>
+          <div className="about__text">
+            <h2 className="section__title">A propos de Moi</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <img className="about__img" src="https://images.unsplash.com/photo-1620519185537-4e18c939713f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=968&q=80" alt="une photo de Marie Krillow"></img>
       </div>
 
       <div className="section section__services" id="services">
         <h2 className="section__title">Mes Services</h2>
-        <button className="services__button">Particuliers</button>
-        <button className="services__button">Professionels</button>
+        {/* <button className="services__button">Particuliers</button>
+        <button className="services__button">Professionels</button> */}
 
         <div className="playingcard section">
+          
           <Playingcard 
             id=""
             backgroundImage={serviceImages}
             littleImage={servicesLittleImages}
             />
+
             <Playingcard 
             id=""
             backgroundImage={servicesProImages}
@@ -63,55 +71,7 @@ export default function Homepage(){
         <h2 className="section__title">Me Contacter</h2>
       </div>
 
-      <section className="socials section" id="socials">
-        <div className="section-container socials-container">
-          <ul className="social-list">
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="mailto:antoine@antoine.norris.ca" target="_blank">
-                <i className="fa-solid fa-envelope"></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="tel:+16476258085">
-                <i className="fa-solid fa-phone"></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="https://www.instagram.com/antoinenorrisrealestate/" target="_blank">
-                <i className="fa-brands fa-instagram"></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="https://www.facebook.com/AntoineNorrisRealEstate/" target="_blank">
-                <i className="fa-brands fa-facebook" ></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="https://www.tiktok.com/@antoinenorrisrealestate" target="_blank">
-                <i className="fa-brands fa-tiktok"></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="https://www.yelp.com/biz/antoine-norris-pine-tree-real-estate-barrie" target="_blank">
-                <i className="fa-brands fa-yelp"></i>
-              </a>
-            </li>
-
-            <li className="social-list__item">
-              <a className="social-list__link" href="https://www.youtube.com/channel/UCtghhJ1ayx2XCMC1PNHz6tA" target="_blank">
-                <i className="fa-brands fa-youtube"></i>
-              </a>
-            </li>
-
-          </ul>
-        </div>
-      </section>
+      <Socials />
 
     </div>
     )

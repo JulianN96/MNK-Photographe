@@ -1,6 +1,22 @@
+import React, {useState} from 'react'
+
 export default function Navbar(){
+
+  //nav colour change when scrolling
+
+  const [navColor, setNavColor] = useState(false)
+  const changeColor = () => {
+    if (window.scrollY >= 90) {
+      setNavColor(true)
+    } else {
+      setNavColor(false)
+    }
+  }
+
+  window.addEventListener('scroll', changeColor)
+
   return(
-    <div className="navbar">
+    <div className={navColor ? 'navbar navbar-scrolled' : 'navbar'}>
       <ul className="navbar-ul">
         <li><a href="#about">A Propos de Moi</a></li>
         <img src="public\assets\images\tempphotolandscape.JPG" alt=""/>
