@@ -1,3 +1,9 @@
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+
+
+
 export default function Socials() {
   return (
     <section className="socials section" id="socials">
@@ -9,7 +15,7 @@ export default function Socials() {
               href="mailto:antoine@antoine.norris.ca"
               target="_blank"
             >
-              <i className="fa-solid fa-envelope"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
           </li>
 
@@ -35,7 +41,7 @@ export default function Socials() {
               href="https://www.facebook.com/AntoineNorrisRealEstate/"
               target="_blank"
             >
-              <i className="fa-brands fa-facebook"></i>
+            <FontAwesomeIcon icon="fa-brands fa-facebook" />
             </a>
           </li>
 

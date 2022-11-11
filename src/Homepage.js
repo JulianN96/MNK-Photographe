@@ -25,11 +25,9 @@ export default function Homepage() {
     "https://images.unsplash.com/photo-1587614298171-a223667e51c2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
   ];
 
-  console.log(servicesdata)
-
-  fetch("./cards.json")
-    .then(res => res.json())
-    .then(data => console.log(data))
+  // fetch("./cards.json")
+  //   .then(res => res.json())
+  //   .then(data => console.log(data))
 
   return (
     <div className="homepage">
@@ -68,14 +66,17 @@ export default function Homepage() {
             id=""
             backgroundImage={serviceImages}
             littleImage={servicesLittleImages}
+            items={servicesdata.particuliers}
           />
 
           <Playingcard
             id=""
             backgroundImage={servicesProImages}
             littleImage={servicesLittleImages}
+            items={servicesdata.professionels}
           />
         </div>
+        
       </div>
 
       <div className="section section__contact" id="contact">

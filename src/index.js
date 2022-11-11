@@ -10,6 +10,9 @@ import BOsettings from "./BOsettings";
 import BOalbums from "./BOalbums";
 import BObookings from "./BObookings";
 import BOstore from "./BOstore";
+import ServicesList from "./ServicesList";
+import ServiceDetail from "./ServiceDetail";
+import BOservices from "./BOservices";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -29,6 +32,9 @@ root.render(
         <Route path="/backoffice/albums" element={<BOalbums />} />
         <Route path="/backoffice/bookings" element={<BObookings/>} />
         <Route path="/backoffice/store" element={<BOstore/>} />
+        <Route path="/backoffice/services" element={<BOservices/>} />
+        <Route path="/services" element={<ServicesList/>} />
+        <Route path="/services/:serviceId" element={<ServiceDetail />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

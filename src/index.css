@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html{
+  margin:0;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -46,13 +50,31 @@ html{
 @media (min-width: 800px){
 
   :root{
-    --fs-h1: 4.5rem;
-    --fs-h2: 3rem;
+    --fs-h1: 3rem;
+    --fs-h2: 2rem;
     --fs-h3: 1.5rem;
     --fs-body: 1.125rem;
   }
 }
 
+
+.standardButton{
+  padding: 1em;
+  background-color:var(--clr-light);
+  border-radius: 25px;
+  color: var(--clr-text);
+  text-decoration: none;
+  border: solid black 2px;
+  max-width: 100%;
+  text-align: center;
+  font-size: 1em;
+}
+
+.standardButton:hover,
+.standardButton:focus{
+  background-color: var(--clr-accent);
+  cursor: pointer;
+}
 
 /* ////////////////
 / Typography /
@@ -349,25 +371,18 @@ i {
 
 .big-card:nth-child(1){
   transform: translateX(-10%) rotate(-1deg);
-  /* background-image: url("https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"); */
-
 }
 
 .big-card:nth-child(3){
   transform: translateX(-10%) rotate(-3deg);
-  /* background-image: url("https://images.unsplash.com/photo-1554080353-a576cf803bda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"); */
-
 }
 
 .big-card:nth-child(5){
   transform: translateX(-6%) rotate(-3deg);
-  /* background-image: url("https://images.unsplash.com/photo-1486916856992-e4db22c8df33?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"); */
-
 }
 
 .big-card:nth-child(7){
   transform: translateX(-10%, 3%) rotate(5deg);
-  /* background-image: url("https://images.unsplash.com/photo-1607462109225-6b64ae2dd3cb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"); */
   z-index: 1;
 }
 
@@ -422,6 +437,122 @@ i {
 /* 
 ///////////////////////////////////////
 ///////////////////////////////////////
+// SERVICES SCREEN //
+///////////////////////////////////////
+///////////////////////////////////////
+*/
+
+.services__menu{
+  padding:0;
+}
+
+.services__menu__banner{
+  background-color: #C16D48;
+  background-image: url("https://source.unsplash.com/random/?dslr/");
+  background-size: cover;
+  margin:0;
+  padding: 3em;
+}
+
+.services__menu__title{
+  background-color: rgba(255,255,255,0.8);
+  padding: 1em;
+  font-size: var(--fs-h1);
+  font-family: var(--ff-primary);
+  border-radius: 15px;
+}
+
+.services__menu__tile-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10em, 1fr));
+  grid-gap: 2em;
+  margin: 0em;
+  background-color: var(--clr-light);
+  padding: 2em;
+}
+
+.services__menu__tile{
+  border: solid grey 0.5px;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5em 1em 0.5em;
+  
+}
+
+.services__menu__tile-title{
+  color: var(--clr-text);
+  text-decoration: none;
+}
+
+.services__menu__tile-image{
+  max-width: 60%;
+  aspect-ratio: 2/3;
+  border-radius: 15px;
+  padding: 0;
+  margin: 0;
+}
+
+.services__menu__returnButton{
+  margin: 1em;
+  margin-top: 1em;
+}
+
+.serviceDetail__background{
+
+  background-image: url("https://source.unsplash.com/random/?dslrcamera/");
+  height: 100vh;
+
+}
+.serviceDetail__modal{
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.349);
+  backdrop-filter: blur(1rem);
+}
+.serviceDetail__screen{
+  max-width: 90%;
+  min-height: 95vh;
+  margin: auto;
+  background-color: var(--clr-light);
+  border-radius:25px;
+  padding-bottom: 1em;
+}
+
+.services__banner-text{
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(1rem);
+  padding: 1em;
+  border-radius: 25px;
+}
+
+.serviceDetail__title{
+  text-align: center;
+  font-size: var(--fs-h1);
+  font-family: var(--ff-primary);
+}
+
+.serviceDetail__content{
+  padding: 1em;
+  display: flex;
+  
+}
+
+.serviceDetail__image{
+  max-width: 60%;
+  margin-right: 1em;
+  border-radius: 25px;
+}
+
+.servicesReturn__button{
+  margin: 1em;
+}
+
+/* 
+///////////////////////////////////////
+///////////////////////////////////////
 // LOGIN SCREEN //
 ///////////////////////////////////////
 ///////////////////////////////////////
@@ -450,7 +581,6 @@ i {
 
 .login__title{
   font-size: var(--fs-h2);
-
 }
 
 .login__container form{
@@ -466,23 +596,10 @@ i {
 }
 
 .login__button{
-  padding: 1em;
-  background-color:var(--clr-light);
-  border-radius: 25px;
-  color: var(--clr-text);
-  text-decoration: none;
-  border: solid black 2px;
-  max-width: 100%;
-  text-align: center;
   margin-bottom: 1em;
-  font-size: 1em;
 }
 
-.login__button:hover,
-.login__button:focus{
-  background-color: var(--clr-accent);
-  cursor: pointer;
-}
+
 
 /* 
 ///////////////////////////////////////

@@ -1,11 +1,6 @@
 import React from "react"
-import {Link, redirect, Route, Routes} from "react-router-dom"
+import {Link} from "react-router-dom"
 
-import {
-  useHistory,
-  useLocation,
-  Redirect
-} from "react-router-dom"
 
 export default function Login(){
 
@@ -17,7 +12,7 @@ export default function Login(){
   })
 
   function handleChange(event){
-    const {name, value, type} = event.target
+    const {name, value} = event.target
     setFormData(prevData => ({
       return: {
         ...prevData,
@@ -58,8 +53,8 @@ export default function Login(){
           {/* <button className="login__button">Connexion</button> */}
 
         </form>
-        <Link to="/backoffice" className="login__button">Connexion</Link>
-        <Link to="/" className="login__button">Retour au Site</Link>
+        <Link to="/backoffice" className="standardButton login__button">Connexion</Link>
+        <Link to="/" className="standardButton login__button">Retour au Site</Link>
         </div>
     </div>
   )

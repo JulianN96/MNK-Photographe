@@ -23,7 +23,7 @@ export default function Navbar() {
         </li>
         <img src="public\assets\images\tempphotolandscape.JPG" alt="" />
         <li>
-          <a href="#services">Mes Services</a>
+          <Link to="/services">Mes Services</Link>
           <div className="menu-sub">
             <li>
               <a href="">Particuliers</a>
