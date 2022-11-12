@@ -704,3 +704,23 @@ i {
  border: none;
 }
 
+
+/* /////////////////////////////////////
+// BACKOFFICE NEW SERVICE//
+///////////////////////////////////// */
+
+.BO__newservice__form{
+  display: flex;
+  flex-direction: column;
+}
+
+.BO__newservice__form-input{
+  margin: 1em;
+  border-radius: 15px;
+  border: solid grey 1px;
+  padding: 1em;
+}
+
+.input-paragraph{
+  padding: 4em;
+}

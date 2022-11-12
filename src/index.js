@@ -13,6 +13,7 @@ import BOstore from "./BOstore";
 import ServicesList from "./ServicesList";
 import ServiceDetail from "./ServiceDetail";
 import BOservices from "./BOservices";
+import BOnewservice from "./BOnewservice";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -35,6 +36,7 @@ root.render(
         <Route path="/backoffice/services" element={<BOservices/>} />
         <Route path="/services" element={<ServicesList/>} />
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
+        <Route path="/backoffice/services/new" element={<BOnewservice />} /> 
       </Routes>
     </BrowserRouter>
   </React.StrictMode>
