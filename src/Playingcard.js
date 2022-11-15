@@ -8,7 +8,6 @@ export default function Playingcard(props) {
     cardArray.push(props.items[key])
   })
 
-  console.log(cardArray)
 
   const backgroundImageArray = props.backgroundImage.map((item) => {
     return { backgroundImage: `url(${item})` };

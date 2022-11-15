@@ -18,7 +18,7 @@ export default function HeroCarousel() {
       }}
     >
       <h1 className="section__title">MNK Photographe</h1>
-      <button onClick={cycleHeroBanner}>Heroclick</button>
+      {/* <button onClick={cycleHeroBanner}>Heroclick</button> */}
     </div>,
   ];
 
@@ -30,7 +30,7 @@ export default function HeroCarousel() {
       }}
     >
       <h1 className="section__title">Second Title</h1>
-      <button onClick={cycleHeroBanner}>Heroclick</button>
+      {/* <button onClick={cycleHeroBanner}>Heroclick</button> */}
     </div>,
   ];
 
@@ -42,7 +42,7 @@ export default function HeroCarousel() {
       }}
     >
       <h1 className="section__title">Third Title</h1>
-      <button onClick={cycleHeroBanner}>Heroclick</button>
+      {/* <button onClick={cycleHeroBanner}>Heroclick</button> */}
     </div>,
   ];
 
@@ -50,21 +50,22 @@ export default function HeroCarousel() {
 
   const [HeroBanner, setHeroBanner] = useState(heroArray[0]);
 
-  function cycleHeroBanner() {
-    if (count < heroArray.length - 1) {
-      count++;
-    } else {
-      count = 0;
+
+    setTimeout(cycleHeroBanner(),5000)
+
+
+    function cycleHeroBanner() {
+      if (count < heroArray.length - 1) {
+        count++;
+      } else {
+        count = 0;
+      }
+      console.log(count);
+      console.log(heroArray.length);
+  
+      // setHeroBanner(heroArray[count]);
     }
-    console.log(count);
-    console.log(heroArray.length);
 
-    setHeroBanner(heroArray[count]);
-  }
-
-  // setTimeout(()=> {
-  //   cycleHeroBanner()
-  // }, 3000)
 
   return HeroBanner;
 

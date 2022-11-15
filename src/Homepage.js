@@ -81,9 +81,12 @@ export default function Homepage() {
 
       <div className="section section__contact" id="contact">
         <h2 className="section__title">Me Contacter</h2>
+        <div className="homepage__contact-iconContainer">
+          <Socials />
+        </div>
       </div>
 
-      <Socials />
+
     </div>
   );
 }

@@ -7,6 +7,7 @@ export default function BOusers(){
         <BackofficeNav />
         <div className="boElement">
           <h1>Utilisateurs</h1>
+          <h3>Acces eventuel utilisateurs</h3>
         </div>
       </div>
     </div>

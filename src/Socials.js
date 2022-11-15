@@ -1,6 +1,9 @@
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook } from "@fortawesome/free-brands-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 
 
@@ -11,7 +14,7 @@ export default function Socials() {
         <ul className="social-list">
           <li className="social-list__item">
             <a
-              className="social-list__link"
+              className="social-list__link bounce2"
               href="mailto:antoine@antoine.norris.ca"
               target="_blank"
             >
@@ -20,60 +23,32 @@ export default function Socials() {
           </li>
 
           <li className="social-list__item">
-            <a className="social-list__link" href="tel:+16476258085">
-              <i className="fa-solid fa-phone"></i>
+            <a className="social-list__link bounce2" href="tel:+33666160499">
+              <FontAwesomeIcon icon={faPhone} />
             </a>
           </li>
 
           <li className="social-list__item">
             <a
-              className="social-list__link"
-              href="https://www.instagram.com/antoinenorrisrealestate/"
+              className="social-list__link bounce2"
+              href="https://www.instagram.com/mnkphotographe/"
               target="_blank"
             >
-              <i className="fa-brands fa-instagram"></i>
+              <FontAwesomeIcon icon={faInstagram} />
             </a>
           </li>
 
           <li className="social-list__item">
             <a
-              className="social-list__link"
-              href="https://www.facebook.com/AntoineNorrisRealEstate/"
+              className="social-list__link bounce2"
+              href="https://www.facebook.com"
               target="_blank"
             >
-            <FontAwesomeIcon icon="fa-brands fa-facebook" />
+            <FontAwesomeIcon icon={faFacebook} />
             </a>
-          </li>
+          </li> 
 
-          <li className="social-list__item">
-            <a
-              className="social-list__link"
-              href="https://www.tiktok.com/@antoinenorrisrealestate"
-              target="_blank"
-            >
-              <i className="fa-brands fa-tiktok"></i>
-            </a>
-          </li>
 
-          <li className="social-list__item">
-            <a
-              className="social-list__link"
-              href="https://www.yelp.com/biz/antoine-norris-pine-tree-real-estate-barrie"
-              target="_blank"
-            >
-              <i className="fa-brands fa-yelp"></i>
-            </a>
-          </li>
-
-          <li className="social-list__item">
-            <a
-              className="social-list__link"
-              href="https://www.youtube.com/channel/UCtghhJ1ayx2XCMC1PNHz6tA"
-              target="_blank"
-            >
-              <i className="fa-brands fa-youtube"></i>
-            </a>
-          </li>
         </ul>
       </div>
     </section>

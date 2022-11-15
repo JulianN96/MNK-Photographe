@@ -238,10 +238,6 @@ html{
 }
 
 /* /////////////////////////////////////
-// SOCIALS //
-///////////////////////////////////// */
-
-/* /////////////////////////////////////
 // SERVICES //
 ///////////////////////////////////// */
 
@@ -283,6 +279,7 @@ html{
 ///////////////////////////////////// */
 
 .section__contact{
+  background-image: url("https://source.unsplash.com/random/?dslr/");
   background-color: var(--clr-light);
   min-height: 40vh;
 }
@@ -293,26 +290,43 @@ html{
 
 .socials {
   margin: auto;
-  border: blue solid 2px;
   margin-bottom: 2em;
 }
 
 .social-list__link {
   color: var(--clr-dark);
-  border: red solid 2px;
-  width: 5px;
-  height: 5px;
+  font-size: 2em;
   font-weight: 800;
 }
 
-i {
-  color: darkblue;
+.bounce2{
+  animation: bounce2 2s ease infinite;
 }
+
+@keyframes bounce2 {
+	0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+	40% {transform: translateY(-30px);}
+	60% {transform: translateY(-15px);}
+}
+
+.bounce2:hover,
+.bounce2:focus{
+  color: var(--clr-accent);
+
+}
+
+
+
 
 .social-list {
   list-style: none;
   display: flex;
   justify-content: space-evenly;
+}
+
+.homepage__contact-iconContainer{
+  background-color: var(--clr-light);
+  border-radius: 25px;
 }
 
 /* /////////////////////////////////////
@@ -432,6 +446,52 @@ i {
 .card-group:hover > .little-card:nth-child(8){
   transform: translate(-250%, 230%) rotate(-15deg);
 }
+
+/* 
+///////////////////////////////////////
+///////////////////////////////////////
+// PHOTO GALLERY //
+///////////////////////////////////////
+///////////////////////////////////////
+*/
+.photoGallery{
+  margin:0;
+  padding:0;
+}
+.photoGalleries{
+  display: flex;
+}
+
+.photoGallery-container{
+  max-width: 25%;
+  max-height: 90vh;
+
+  margin: 1em;
+  overflow: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  transition: max-width ease-in-out 350ms;
+}
+
+.photoGallery-container:hover,
+.photoGallery-container:focus{
+  max-width: 40%;
+}
+
+
+.photoGallery-container::-webkit-scrollbar{
+  display: none;
+}
+
+.gallery_photo{
+  max-width: 100%;
+  border-radius: 25px;
+  margin-bottom: 1em;
+}
+
+
 
 
 /* 

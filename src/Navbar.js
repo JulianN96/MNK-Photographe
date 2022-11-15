@@ -19,6 +19,9 @@ export default function Navbar() {
     <div className={navColor ? "navbar navbar-scrolled" : "navbar"}>
       <ul className="navbar-ul">
         <li>
+          <Link to="/photos">Gallerie Photos</Link>
+        </li>
+        <li>
           <a href="#about">A Propos de Moi</a>
         </li>
         <img src="public\assets\images\tempphotolandscape.JPG" alt="" />

@@ -33,6 +33,7 @@ export default function ServicesList() {
     <div className="services__menu__tile-container">
       {services}
     </div>
+    
   </div>
   )
 }
