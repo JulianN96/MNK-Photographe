@@ -1,7 +1,13 @@
 import BackofficeNav from "./BackofficeNav";
 import React from "react"
+import datatest from "./datatest";
 
 export default function BOnewservice(){
+
+
+  fetch("http://localhost:3002/particuliers")
+    .then(res => res.json())
+    .then(data => console.log(data))
 
   const [formData, setFormData] = React.useState({
     serviceType: "",
@@ -14,17 +20,39 @@ export default function BOnewservice(){
   function handleChange(event){
     const {name, value, type} = event.target
     setFormData(prevFormData => ({
-      return: {
-        prevFormData,
+        ...prevFormData,
         [name]: value
-    }
     }))
+
   }
   
   function handleSubmit(event){
+    let newService = {}
+    let newProService = {}
     event.preventDefault()
-    console.log(formData)
-    //submition to object goes here
+
+    if (formData.serviceType === "Particuliers"){
+      newService = {
+        id: "testid",
+        title: formData.serviceName,
+        image: formData.serviceImage,
+        time: formData.serviceTime
+      }
+
+      datatest.particuliers.push(newService)
+    } 
+    else if (formData.serviceType === "Professionels"){
+      newProService = {
+        id: "testid",
+        title: formData.serviceName,
+        image: formData.serviceImage,
+        time: formData.serviceTime
+      }
+      datatest.professionels.push(newProService)
+    }
+
+    console.log(datatest.professionels)
+
   }
 
   return(
@@ -36,17 +64,19 @@ export default function BOnewservice(){
 
         <label for="serviceType">Type de Service:</label>
           <select
-          className="BO__newservice__form-input">
+          className="BO__newservice__form-input"
+          name = "serviceType" 
+          onChange={handleChange}>
             <option selected disabled>Choisir</option>
             <option 
               value="Particuliers" 
-              name="serviceType" 
-              onChange={handleChange}>
+             
+              >
                 Particuliers
             </option>
             <option 
               value="Professionels" 
-              name="serviceType" 
+              
               onChange={handleChange}>
                 Professionels
             </option>

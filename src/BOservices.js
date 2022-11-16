@@ -7,13 +7,26 @@ export default function BOservices(){
   const servicesArrayParticuliers = []
   const servicesArrayProfessionels = []
 
-  Object.keys(servicesdata.particuliers).forEach(function(key, index){
-    servicesArrayParticuliers.push(servicesdata.particuliers[key])
-  })
+  fetch("http://localhost:3002/particuliers")
+  .then(res => res.json())
+  .then(data => data.map(data => servicesArrayParticuliers.push(data)))
 
-  Object.keys(servicesdata.professionels).forEach(function(key, index){
-    servicesArrayProfessionels.push(servicesdata.professionels[key])
-  })
+  fetch("http://localhost:3002/professionels")
+  .then(res => res.json())
+  .then(data => data.map(data => servicesArrayProfessionels.push(data)))
+
+  console.log(servicesArrayParticuliers)
+  console.log(servicesArrayProfessionels)
+
+  // Object.keys(servicesdata.particuliers).forEach(function(key, index){
+  //   servicesArrayParticuliers.push(servicesdata.particuliers[key])
+  // })
+
+  // console.log(servicesArrayParticuliers)
+
+  // Object.keys(servicesdata.professionels).forEach(function(key, index){
+  //   servicesArrayProfessionels.push(servicesdata.professionels[key])
+  // })
 
   const servicesParticuliers = servicesArrayParticuliers.map(service =>(
     <div className="services__menu__tile">
@@ -48,7 +61,7 @@ export default function BOservices(){
             <Link to="/backoffice/services/new" className="standardButton">Ajouter un Service</Link>
           </div>
 
-          <div classNmae="boServices__professionels">
+          <div className="boServices__professionels">
             <h2>Professionels</h2>
             {servicesProfessionels}
             <Link to="/backoffice/services/new" className="standardButton">Ajouter un Service</Link>
