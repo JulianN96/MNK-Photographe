@@ -5,24 +5,44 @@ import {Link} from "react-router-dom";
 export default function BOservices(){
 
   const servicesArrayParticuliers = []
-  const servicesArrayProfessionels = []
+  let servicesArrayProfessionels = []
 
-  fetch("http://localhost:3002/particuliers")
-  .then(res => res.json())
-  .then(data => data.map(data => servicesArrayParticuliers.push(data)))
+  let serviceProfessionels = []
+  // fetch("http://localhost:3002/particuliers")
+  // .then(res => res.json())
+  // .then(data => data.map(data => servicesArrayParticuliers.push(data)))
 
-  fetch("http://localhost:3002/professionels")
-  .then(res => res.json())
-  .then(data => data.map(data => servicesArrayProfessionels.push(data)))
+async function getProServices(){
+    fetch("http://localhost:3002/professionels")
+      .then(res => res.json())
+      .then(data => {
+        serviceProfessionels = data.map(service =>
+          <div className="services__menu__tile">
+            <h3 key={service.id}>
+              <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
+            </h3>
+          </div>
+          )
 
-  console.log(servicesArrayParticuliers)
-  console.log(servicesArrayProfessionels)
+        console.log(serviceProfessionels)
 
-  // Object.keys(servicesdata.particuliers).forEach(function(key, index){
-  //   servicesArrayParticuliers.push(servicesdata.particuliers[key])
-  // })
+      }
+      )
+  } 
 
+  getProServices()
+
+
+  // console.log(getProServices())
+    // data.map(data => servicesArrayProfessionels.push(data)))
+  // console.log(serviceProfessionels)
   // console.log(servicesArrayParticuliers)
+  
+
+  Object.keys(servicesdata.particuliers).forEach(function(key, index){
+    servicesArrayParticuliers.push(servicesdata.particuliers[key])
+  })
+
 
   // Object.keys(servicesdata.professionels).forEach(function(key, index){
   //   servicesArrayProfessionels.push(servicesdata.professionels[key])
@@ -33,18 +53,16 @@ export default function BOservices(){
       <h3 key={service.id}>
         <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
       </h3>
-      {/* <img className="services__menu__tile-image" src={service.image} alt="service tile"></img> */}
     </div>
   ))
 
-  const servicesProfessionels = servicesArrayProfessionels.map(service =>(
-    <div className="services__menu__tile">
-      <h3 key={service.id}>
-        <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
-      </h3>
-      {/* <img className="services__menu__tile-image" src={service.image} alt="service tile"></img> */}
-    </div>
-  ))
+  // const servicesProfessionels = servicesArrayProfessionels.map(service =>(
+  //   <div className="services__menu__tile">
+  //     <h3 key={service.id}>
+  //       <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
+  //     </h3>
+  //   </div>
+  // ))
 
 
   return(
@@ -63,19 +81,11 @@ export default function BOservices(){
 
           <div className="boServices__professionels">
             <h2>Professionels</h2>
-            {servicesProfessionels}
+            {serviceProfessionels}
             <Link to="/backoffice/services/new" className="standardButton">Ajouter un Service</Link>
           </div>
         </div>
 
-        {/* //CREATE
-        React form to grab the info
-        - Title field
-        - Image url field (to be replaced)
-        - Description field
-        - Time field
-        ID to be generated - use nanoid? 
-        push info to object array*/}
       </div>
     </div>
   )
