@@ -1,5 +1,6 @@
 import BackofficeNav from "./BackofficeNav";
 import servicesdata from "./servicesdata";
+import React from "react";
 import {Link} from "react-router-dom";
 
 export default function BOservices(){
@@ -7,30 +8,44 @@ export default function BOservices(){
   const servicesArrayParticuliers = []
   let servicesArrayProfessionels = []
 
-  let serviceProfessionels = []
-  // fetch("http://localhost:3002/particuliers")
-  // .then(res => res.json())
-  // .then(data => data.map(data => servicesArrayParticuliers.push(data)))
+  const [serviceProfessionels, setServiceProfessionels] = React.useState([""])
 
-async function getProServices(){
-    fetch("http://localhost:3002/professionels")
-      .then(res => res.json())
-      .then(data => {
-        serviceProfessionels = data.map(service =>
-          <div className="services__menu__tile">
-            <h3 key={service.id}>
-              <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
-            </h3>
-          </div>
-          )
+function renderProfessionels(){
+  fetch("http://localhost:3002/professionels")
+  .then(res => res.json())
+  .then(data => {
+    console.log(data.length)
+    for (let i = 0; i < data.length; i++){
+      console.log(data[i])
+      servicesArrayProfessionels.push(data[i])
+    }
 
-        console.log(serviceProfessionels)
+    setServiceProfessionels(servicesArrayProfessionels.map(service =>
+      <div className="services__menu__tile">
+        <h3 key={service.id}>
+          <Link to={`/services/${service.id}`} className="services__menu__tile-title">{service.title}</Link>
+        </h3>
+      </div>
+      ))
 
-      }
-      )
-  } 
+      console.log(serviceProfessionels)
+      return serviceProfessionels
+  })
+}
 
-  getProServices()
+  // console.log(serviceProfessionels)
+
+
+
+// async function getProServices(data){
+
+
+
+
+//       }
+      
+  
+
 
 
   // console.log(getProServices())
@@ -81,7 +96,7 @@ async function getProServices(){
 
           <div className="boServices__professionels">
             <h2>Professionels</h2>
-            {serviceProfessionels}
+            {renderProfessionels()}
             <Link to="/backoffice/services/new" className="standardButton">Ajouter un Service</Link>
           </div>
         </div>
@@ -89,4 +104,5 @@ async function getProServices(){
       </div>
     </div>
   )
+
 }
