@@ -17,8 +17,10 @@ export default function BackofficeNav(){
         <li><Link to="/backoffice/bookings" className="backofficeNav__link">Mes Rendez-Vous</Link></li>
         <li><Link to="/backoffice/services" className="backofficeNav__link">Mes Services</Link></li>
         <li><Link to="/backoffice/store" className="backofficeNav__link">E-Commerce</Link></li>
+        <li><Link to="/backoffice/store/catalogue" className="backofficeNav__link">TEST CATALOGUE</Link></li>
         <li><Link to="/backoffice/users" className="backofficeNav__link">Utilisateurs</Link></li>
         <li><Link to="/backoffice/settings" className="backofficeNav__link">Parametres</Link></li>
+        
       </ul>
 
     </div>

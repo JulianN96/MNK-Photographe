@@ -16,9 +16,11 @@ import BOservices from "./BOservices";
 import BOnewservice from "./BOnewservice";
 import PhotoGallery from "./PhotoGallery";
 import BOClients from "./BOclients";
+import BONewProduct from "./BONewProduct";
 
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import BOProductCatalogue from "./BOProductCatalogue";
 
 <link rel="stylesheet" href="./index.css" />;
 
@@ -41,6 +43,8 @@ root.render(
         <Route path="/services/:serviceId" element={<ServiceDetail />} />
         <Route path="/backoffice/services/new" element={<BOnewservice />} /> 
         <Route path="/photos" element={<PhotoGallery />} />
+        <Route path="/backoffice/store/catalogue" element={<BOProductCatalogue/>} />
+        <Route path="backoffice/store/catalogue/new" element ={<BONewProduct />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

@@ -7,7 +7,7 @@ export default function BOnewservice(){
 
   fetch("http://localhost:3002/particuliers")
     .then(res => res.json())
-    .then(data => console.log(data))
+    .then(data => {})
 
   const [formData, setFormData] = React.useState({
     serviceType: "",
@@ -34,6 +34,7 @@ export default function BOnewservice(){
     if (formData.serviceType === "Particuliers"){
       newService = {
         id: "testid",
+        description: formData.serviceDescription,
         title: formData.serviceName,
         image: formData.serviceImage,
         time: formData.serviceTime
@@ -44,11 +45,13 @@ export default function BOnewservice(){
     else if (formData.serviceType === "Professionels"){
       newProService = {
         id: "testid",
+        description: formData.serviceDescription,
         title: formData.serviceName,
         image: formData.serviceImage,
         time: formData.serviceTime
       }
       datatest.professionels.push(newProService)
+      
     }
 
     console.log(datatest.professionels)
