@@ -6,9 +6,9 @@ export default function BONewProduct(){
   
   const [formData, setFormData] = React.useState({
     title:"",
-    productDescription: "",
-    productPrice: 0,
-    productImageUrl: ""
+    description: "",
+    price: 0,
+    imageUrl: ""
   })
 
   function handleChange(event){
@@ -24,18 +24,26 @@ export default function BONewProduct(){
     event.preventDefault()
     console.log(formData)
     const url ="http://localhost:3002/api/products"
+    const jsonFormData = JSON.stringify(formData)
 
     const requestOptions = {
       method: "POST",
+      mode: "cors",
+      cache: "no-cache",
       headers: {"Content-Type": "application/json"},
-      body: JSON.stringify(formData)
+      referrerPolicy: "no-referrer",
+      body: jsonFormData
     }
-
-    console.log(requestOptions)
+    
+    console.log((typeof jsonFormData))
 
     fetch(url, requestOptions)
       .then(response => response.json())
-      .then(data => this.setState({postId: data.id}))
+      .then((data) => {
+        console.log(data)
+        this.setState({postId: data.id})})
+      .catch(error => console.error("Error:", error))
+    
   }
   
 
@@ -47,7 +55,7 @@ export default function BONewProduct(){
       <div className="boElement">
 
         <form className="BO__newservice__form newProductForm" onSubmit={handleSubmit}>
-          <label for="title">Intitulé du produit</label>
+          <label htmlFor="title">Intitulé du produit</label>
           <input 
             className="BO__newProduct__form-input"
             type="text"
@@ -56,35 +64,35 @@ export default function BONewProduct(){
             value={formData.title}
             />
 
-          <label for="productDescription">Details du Produit:</label>
+          <label htmlFor="description">Details du Produit:</label>
 
           <input
             className="BO__newProduct__form-input input-paragraph"
             type="text"
             placeholder="Details du Produit"
             onChange={handleChange}
-            name="productDescription"
-            value={formData.productDescription}
+            name="description"
+            value={formData.description}
             />
 
-          <label for="productPrice">Prix du Produit:</label>
+          <label htmlFor="price">Prix du Produit:</label>
           <input 
             className="BO__newProduct__form-input"
             type="number"
             placeholder=""
             onChange={handleChange}
-            name="productPrice"
-            value={formData.productPrice}
+            name="price"
+            value={formData.price}
             />
 
-          <label for="productImageUrl">URL Photo</label>
+          <label htmlFor="imageUrl">URL Photo</label>
           <input
             className="BO__newProduct__form-input"
             type="text"
             placeholder="http://..."
             onChange={handleChange}
-            name="productImageUrl"
-            value={formData.productImageUrl}
+            name="imageUrl"
+            value={formData.imageUrl}
             />
 
           <button className="standardButton">Add new Product</button>

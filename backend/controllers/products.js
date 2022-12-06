@@ -2,6 +2,7 @@ const { faTurkishLiraSign } = require("@fortawesome/free-solid-svg-icons")
 const Product = require("../models/product")
 
 exports.createProduct = (req,res,next) =>{
+  console.log(req)
   const product = new Product({
     title: req.body.title,
     description: req.body.description,
